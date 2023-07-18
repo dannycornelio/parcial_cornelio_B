@@ -1,13 +1,97 @@
 *{
-    margin: 0%;
     padding: 0%;
+    margin: 0%;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    background: rgb(2,0,36);
+background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 21%, rgba(0,212,255,1) 100%);
+}
+
+body h1{
+    text-align: center;
+    background-color: aliceblue;
+    margin-top: 20px;
+    padding: 1em;
+    font-family: "Poppins", sans-serif;
+    font-weight: bolder;
+    font-size: 3em;
+    border-radius: 0.5em;
 
 }
 
-body{
+.container{
+    background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+width: 80vw;
+max-height: 37.5em;
+padding: 3em 2.5em;
+position: absolute;
+transform: translate(-50%, -50%);
+top: 50%;
+left: 50%;
+border-radius: 0.62em;
+box-shadow: 0 1.25em 1.8em arba(8, 21, 65, 025);
+overflow: auto;
+}
+
+.buscar-wrapper{
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    gap: 1.5em;
+}
+
+.buscar-wrapper button{
+    font-size: 1em;
+    padding: 1em;
+    border-radius: 1.5em;
+}
+
+.buscar-wrapper input{
+    font-size: 1em;
+    padding: 0 0.62em;
+    border: none;
+    border-bottom: 2px solid #3d64e6;
+    border-radius: 1.5em;
+    outline: none;
+    color: #222a43;
+}
+
+#resulta{
+    margin-top: 1.25em;
+}
+.container .flagImg {
+    display: block;
+    width: 30%;
+    min-width: 7.5em;
+    margin: 1.8em auto 1.2em auto;
+}
+
+.container h2 {
+    font-weight: 600;
+    color: #222a43;
     text-align: center;
-    margin: 30px;
-    background: rgb(34,193,195);
-background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.8em;
+}
+
+.dataWrappe{
+    margin-bottom: 1em;
+    letter-spacing: 0.3px;
+}
+
+.container h4{
+    display: inline;
+    font-weight: 500;
+    color: #222a43;
+}
+
+.container span {
+    color: #5f6274;
+}
+
+.container h3{
+    text-align: center;
 }
