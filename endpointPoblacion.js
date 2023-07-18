@@ -1,22 +1,19 @@
 let buscarBtn = document.getElementById("buscarBtn");
 let paisInp = document.getElementById("paisInp");
 
-paisInp.addEventListener("paisInp", () => {
-    let texto = paisInp.value;
-    let textoMinuscula = texto.toLowerCase();
-  
-    if (texto !== textoMinuscula) {
-      input.value = textoMinuscula;
-    }
-  });
+
 
 buscarBtn.addEventListener("click", () => {
-    let paisCode = paisInp.value.toLowerCase(); // Convertir a minúsculas
+    let paisCode = paisInp.value;
+    if(paisCode == ''){
+        alert("Debe ingregar el codigo del pais")
+        return;}
     let finalURL = `https://restcountries.com/v3.1/alpha/${paisCode}`;
     console.log(finalURL);
     fetch(finalURL)
         .then((response) => response.json())
         .then((data) => {
+
           
             resultado.innerHTML = `
             <img src="${data[0].flags.svg}" class="flagImg">

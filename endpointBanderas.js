@@ -11,7 +11,11 @@ paisInp.addEventListener("paisInp", () => {
   });
 
 buscarBtn.addEventListener("click", () => {
-    let paisName = paisInp.value.toLowerCase(); // Convertir a minúsculas
+    let paisName = paisInp.value.toLowerCase(); 
+    if(paisName == ''){
+        alert("Debe ingregar el nombre del pais")
+        return;}
+
     let finalURL = `https://restcountries.com/v3.1/name/${paisName}?fullText=true`;
     console.log(finalURL);
     fetch(finalURL)
