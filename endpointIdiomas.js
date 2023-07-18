@@ -1,6 +1,7 @@
 let buscarBtn = document.getElementById("buscarBtn");
 let paisInp = document.getElementById("paisInp");
 
+
 paisInp.addEventListener("paisInp", () => {
     let texto = paisInp.value;
     let textoMinuscula = texto.toLowerCase();
@@ -11,8 +12,11 @@ paisInp.addEventListener("paisInp", () => {
   });
 
 buscarBtn.addEventListener("click", () => {
-    let paisName = paisInp.value.toLowerCase(); // Convertir a minúsculas
-    let finalURL = `https://restcountries.com/v3.1/name/${paisName}`;
+    let nameSimp = paisInp.value;
+    if(nameSimp == ''){
+        alert("Debe ingregar el nombre del pais")
+        return;}
+    let finalURL = `https://restcountries.com/v3.1/name/${nameSimp}`;
     console.log(finalURL);
     fetch(finalURL)
         .then((response) => response.json())
