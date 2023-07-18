@@ -16,11 +16,16 @@ buscarBtn.addEventListener("click", () => {
         alert("Debe ingregar el nombre del pais")
         return;}
 
-    let finalURL = `https://restcountries.com/v3.1/name/${paisName}?fullText=true`;
-    console.log(finalURL);
-    fetch(finalURL)
-        .then((response) => response.json())
-        .then((data) => {
+        let finalURL = `https://restcountries.com/v3.1/name/${paisName}?fullText=true`;
+        console.log(finalURL);
+        fetch(finalURL)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Error 400: La consulta no se encontró");
+            }
+            return response.json();
+          })
+          .then((data) => {
           
             resultado.innerHTML = `
             <img src="${data[0].flags.svg}" class="flagImg">

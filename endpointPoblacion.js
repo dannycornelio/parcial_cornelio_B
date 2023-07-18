@@ -5,16 +5,15 @@ let paisInp = document.getElementById("paisInp");
 
 buscarBtn.addEventListener("click", () => {
     let paisCode = paisInp.value;
-    if(paisCode == ''){
-        alert("Debe ingregar el codigo del pais")
-        return;}
+    if (paisCode == '') {
+        alert("Debe ingresar el código del país");
+        return;
+    }
     let finalURL = `https://restcountries.com/v3.1/alpha/${paisCode}`;
     console.log(finalURL);
     fetch(finalURL)
         .then((response) => response.json())
         .then((data) => {
-
-          
             resultado.innerHTML = `
             <img src="${data[0].flags.svg}" class="flagImg">
             <h2> ${data[0].name.common} </h2>
@@ -33,7 +32,7 @@ buscarBtn.addEventListener("click", () => {
             </div>
             <div class="wrapper">
                 <div class="dataWrapper">
-                     <h4>Poblacion</h4>
+                     <h4>Población</h4>
                      <span>${data[0].population}</span>
                 </div>
             </div>
@@ -48,12 +47,14 @@ buscarBtn.addEventListener("click", () => {
                      <h4>Idioma</h4>
                      <span>${Object.values(data[0].languages).toString().split(", ").join(", ")}</span>
                 </div>
-            </div>
-
-            `
-            
-        });  
+            </div>`;
+        })
+        .catch((error) => {
+            console.log(error);
+            resultado.innerHTML = "Error al obtener la información del país";
+        });
 });
+
 
 
 
